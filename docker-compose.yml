@@ -1,0 +1,16 @@
+web:
+  build: .
+  links:
+    - "redis:redis"
+    - db
+  environment:
+    - PORT=8080
+    - DATABASE_URL=postgres://db:5432
+    - REDIS_HOST=redis
+    - REDIS_PORT=6379
+redis:
+  image: tutum/redis
+  environment:
+    - REDIS_PASS=password
+db:
+  image: postgres
