@@ -1,1 +1,1 @@
-FROM timchunght/buildstep:elixir
+FROM timchunght/buildstep:multi 
