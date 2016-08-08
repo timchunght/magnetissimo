@@ -5,12 +5,18 @@ web:
     - db
   environment:
     - PORT=8080
-    - DATABASE_URL=postgres://db:5432
+    - DATABASE_URL=postgres://u6pj9thgab6t5nc:p32v6u1elrfasm68a2djftv8ogc@ec2-23-23-321-21.compute-1.amazonaws.com:5592/ddrfk62v
     - REDIS_HOST=redis
     - REDIS_PORT=6379
+  ports:
+    - 80:8080
 redis:
   image: tutum/redis
   environment:
     - REDIS_PASS=password
 db:
   image: postgres
+  environment:
+    - POSTGRES_USER=user
+    - POSTGRES_PASSWORD=password
+    - POSTGRES_DB=mix
